@@ -20,8 +20,30 @@ def part1Sol(input: str) -> int:
 
             maxSecond: int = max(joltageList[maxJoltageInd + 1:])
 
-            print(joltageList[maxJoltageInd] * 10 + maxSecond)
             totalJoltage += joltageList[maxJoltageInd] * 10 + maxSecond
+
+    return totalJoltage
+
+def part2Sol(input: str) -> int:
+    totalJoltage: int = 0
+
+    with open(input, 'r') as f:
+        banks: list[str] = f.readlines()
+
+        for bank in banks:
+            joltageList: list[int] = [int(x) for x in list(bank.strip())]
+            maxJoltageInd: list[int] = []
+            maxJoltages: list[str] = []
+            numBatteries: int = len(joltageList)
+
+            for i in range(12):
+                startInd: int = ((maxJoltageInd[i - 1] + 1) if i > 0 else 0)
+                validJoltages: list[int] = joltageList[startInd:numBatteries - (11 - i)]
+                maxValInd: int = validJoltages.index(max(validJoltages))
+                maxJoltageInd.append(maxValInd + startInd)
+                maxJoltages.append(str(validJoltages[maxValInd]))
+
+            totalJoltage += int(''.join(maxJoltages))
 
     return totalJoltage
 
@@ -31,6 +53,7 @@ def main():
     args = parser.parse_args()
 
     print(f"Day 3 Part 1 Solution: {part1Sol(TEST if args.test else FILE)}")
+    print(f"Day 3 Part 2 Solution: {part2Sol(TEST if args.test else FILE)}")
 
 if __name__ == "__main__":
     main()
