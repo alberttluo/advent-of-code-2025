@@ -1,7 +1,7 @@
 from argparse import ArgumentParser
 
-FILE = "inputs/day4_input.txt"
-TEST = "test/day4_test.txt"
+TEST = "../inputs/day4_smallinput.txt"
+FILE = "../inputs/day4_input.txt"
 
 DIRS: list[list[int]] = [[1, 0], [0, 1], [-1, 0], [0, -1], [1, 1], [1, -1], [-1, 1], [-1, -1]]
 

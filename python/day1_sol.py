@@ -1,7 +1,7 @@
 from argparse import ArgumentParser
 
-TEST = "test/day1_test.txt"
-FILE = "inputs/day1_input.txt"
+TEST = "../inputs/day1_smallinput.txt"
+FILE = "../inputs/day1_input.txt"
 
 def part1Sol(input: str) -> int:
     # Dial is initially pointing at 50.

@@ -1,8 +1,8 @@
 import sys
 from argparse import ArgumentParser
 
-FILE = "inputs/day5_input.txt"
-TEST = "test/day5_test.txt"
+TEST = "../inputs/day5_smallinput.txt"
+FILE = "../inputs/day5_input.txt"
 
 def part1Sol(ranges: list[str], nums: list[int]) -> int:
     numFresh: int = 0

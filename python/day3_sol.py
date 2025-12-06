@@ -1,7 +1,7 @@
 from argparse import ArgumentParser
 
-FILE = "inputs/day3_input.txt"
-TEST = "test/day3_test.txt"
+TEST = "../inputs/day3_smallinput.txt"
+FILE = "../inputs/day3_input.txt"
 
 def part1Sol(input: str) -> int:
     totalJoltage: int = 0 

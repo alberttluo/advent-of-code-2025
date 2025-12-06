@@ -1,7 +1,7 @@
 from argparse import ArgumentParser
 
-FILE = "inputs/day2_input.txt"
-TEST = "test/day2_test.txt"
+TEST = "../inputs/day2_smallinput.txt"
+FILE = "../inputs/day2_input.txt"
 
 def doesRepeatTwice(num: str) -> bool:
     if (len(num) % 2 == 1):
@@ -44,7 +44,6 @@ def day2Sol(input: str, partSol: int) -> int:
 
             for i in range(start, end + 1):
                 if (doesRepeatTwice(str(i)) if partSol == 1 else doesRepeatN(str(i))):
-                    print(i)
                     sum += i
            
     return sum
